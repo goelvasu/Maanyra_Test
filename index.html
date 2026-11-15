@@ -27,7 +27,7 @@ nav{display:flex;gap:2px}nav a{padding:8px 14px;border-radius:99px;text-decorati
 .sb{display:none;padding:10px 16px;background:var(--lil)}.sb.on{display:block}.sb input{width:100%;max-width:560px;display:block;margin:auto}
 main{width:100%;flex:1 0 auto;max-width:1120px;margin:0 auto;padding:22px 16px 44px}.view{display:none}.view.on{display:block}
 .hero{position:relative;background:var(--pea);border:2px solid var(--bd);border-radius:34px;padding:clamp(28px,6vw,64px);overflow:hidden}
-.hero p{max-width:480px;font-size:1.12rem;color:#5b4a6e}.hero .fl{position:absolute;font-size:3.4rem;animation:bob 5s ease-in-out infinite}
+.hero{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.hero p{max-width:480px;font-size:1.12rem;color:#5b4a6e}.hb2{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.dc{display:flex;flex-direction:column;gap:14px;align-items:center;padding-right:clamp(0px,3vw,40px)}.fl{font-size:3.4rem;line-height:1;animation:bob 5s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(-12px) rotate(6deg)}}
 .btn{display:inline-block;border:0;border-radius:99px;background:var(--ink);color:#fff;padding:13px 24px;font:700 1rem 'DM Sans',sans-serif;text-decoration:none;cursor:pointer;text-align:center;transition:transform .15s}
 .btn:hover{transform:translateY(-2px)}.btn.pk{background:var(--pink)}.btn.g{background:#17a34a}.btn.lt{background:#fff;color:var(--ink);border:2px solid var(--ink)}.btn.w{width:100%}
@@ -70,7 +70,7 @@ label{display:block;font-weight:700;margin:13px 0 5px}.two{display:grid;grid-tem
 .toast{position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--ink);color:#fff;border-radius:99px;padding:10px 20px;font-weight:700;opacity:0;transition:.25s;z-index:50;pointer-events:none}.toast.on{opacity:1;transform:translate(-50%,0)}
 footer{background:var(--ink);color:#e9defa;padding:22px 16px;text-align:center;font-size:.9rem}footer p{margin:.2em 0}
 .bn{display:none}
-@media(max-width:760px){footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}nav{display:none}.bn{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:25;background:#fff;border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px))}.bn a{flex:1;text-align:center;text-decoration:none;font-size:.7rem;font-weight:700;padding:4px 0;border-radius:14px}.bn a b{display:block;font-size:1.3rem;font-weight:400}.bn a.on{background:var(--lil)}}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.dc{flex-direction:row;justify-content:center;gap:30px;padding:0}.fl{font-size:2.6rem}.hb2 .btn{flex:1 1 100%}footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}nav{display:none}.bn{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:25;background:#fff;border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px))}.bn a{flex:1;text-align:center;text-decoration:none;font-size:.7rem;font-weight:700;padding:4px 0;border-radius:14px}.bn a b{display:block;font-size:1.3rem;font-weight:400}.bn a.on{background:var(--lil)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style></head><body>
 <div class="ann"><div id="mq"></div></div>
@@ -82,9 +82,9 @@ footer{background:var(--ink);color:#e9defa;padding:22px 16px;text-align:center;f
 <div class="sb" id="sb"><input id="q" type="search" placeholder="Search diaries, sarees, pens…" oninput="srch(this.value)"></div>
 <main>
 <section class="view" id="v-home">
-<div class="hero"><span class="fl" style="right:8%;top:10%">🎁</span><span class="fl" style="right:22%;bottom:8%;animation-delay:-2s">🧵</span><span class="fl" style="right:4%;bottom:24%;animation-delay:-3s">✏️</span>
+<div class="hero"><div class="ht">
 <h1>Little things for<br>big happy days.</h1><p>Gifts and stationery, handloom treasures and caring tuition for young learners, from our home in Ghaziabad to yours.</p>
-<a class="btn pk" href="#gifts">Shop gifts</a> <a class="btn lt" href="#handlooms">See handlooms</a></div>
+<div class="hb2"><a class="btn pk" href="#gifts">Shop gifts</a><a class="btn lt" href="#handlooms">See handlooms</a></div></div><div class="dc" aria-hidden="true"><span class="fl">🎁</span><span class="fl" style="animation-delay:-2s">🧵</span><span class="fl" style="animation-delay:-3s">✏️</span></div></div>
 <div class="tiles">
 <a class="tile" href="#gifts" style="background:var(--but)"><span class="e">🎁</span><h2>Gift &amp; Stationery</h2><p>Diaries, art supplies, hampers.</p></a>
 <a class="tile" href="#handlooms" style="background:var(--mint)"><span class="e">🥻</span><h2>Handlooms</h2><p>Sarees, stoles, home linen.</p></a>
